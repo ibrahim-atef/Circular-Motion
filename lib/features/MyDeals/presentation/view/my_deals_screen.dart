@@ -16,7 +16,7 @@ class MyDealsScreen extends StatefulWidget {
 }
 
 class _MyDealsScreenState extends State<MyDealsScreen> {
-  /// logic is not separated from view because it is oly one screen
+                          /// logic is not separated from view because its only one screen
   ScrollController scrollController = ScrollController();
   checkPosithion() {
     if (scrollController.position.pixels <=
@@ -121,11 +121,11 @@ class _MyDealsScreenState extends State<MyDealsScreen> {
               children: [
                 SizedBox(height: 25.h),
                 const TopCards(),
-                const SizedBox(height: 10),
+                _buildReusableSB (),
                 const TabSelector(),
-                const SizedBox(height: 10),
+                _buildReusableSB (),
                 SearchBarWidget(),
-                const SizedBox(height: 10),
+                _buildReusableSB (),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
@@ -147,9 +147,9 @@ class _MyDealsScreenState extends State<MyDealsScreen> {
                         )
                       ]),
                 ),
-                SizedBox(height: 10.h),
+                _buildReusableSB (),
                 DealsListView(),
-                SizedBox(height: 10.h),
+                _buildReusableSB (),
               ],
             ),
           ),
@@ -222,5 +222,10 @@ class _MyDealsScreenState extends State<MyDealsScreen> {
         ),
       ),
     );
+  }
+  Widget _buildReusableSB() {
+    return SizedBox(
+      height: 10.h,
+    ) ;
   }
 }
