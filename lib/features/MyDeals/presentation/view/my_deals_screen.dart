@@ -16,8 +16,8 @@ class MyDealsScreen extends StatefulWidget {
 }
 
 class _MyDealsScreenState extends State<MyDealsScreen> {
+  /// logic is not separated from view because it is oly one screen
   ScrollController scrollController = ScrollController();
-
   checkPosithion() {
     if (scrollController.position.pixels <=
         scrollController.position.maxScrollExtent / 2) {
